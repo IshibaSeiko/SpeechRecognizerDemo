@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>マイクを使用します。</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>音声認識を使用します。</string>
 </dict>
 </plist>
