@@ -9,7 +9,7 @@
 @import Speech;
 #import "SampleViewController.h"
 
-@interface SampleViewController ()
+@interface SampleViewController () <SFSpeechRecognizerDelegate>
 
 @end
 
@@ -17,17 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    SFSpeechRecognizer *speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:[NSLocale localeWithLocaleIdentifier:@"ja-JP"]];
+    speechRecognizer.delegate = self;
+    
+    SFSpeechAudioBufferRecognitionRequest *speechRequest;
+    speechRequest = [[SFSpeechAudioBufferRecognitionRequest alloc]init];
+    speechRequest.shouldReportPartialResults = YES;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
